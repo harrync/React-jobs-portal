@@ -1,5 +1,0 @@
-// Sass Functions
-
-@function breakpoint($breakpoint) {
-  @return map-get($breakpoints, $breakpoint);
-}
