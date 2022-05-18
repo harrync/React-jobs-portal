@@ -1,0 +1,72 @@
+.row {
+  width: 100%;
+  padding: 0 var(--unit);
+  max-width: calc(var(--unit) * var(--columns));
+  margin: var(--unit) auto;
+  // GBerg preview fix
+  position: relative;
+  z-index: 1;
+
+  &--lg {
+    --columns: var(--grid-rows);
+  }
+
+  &--med {
+    --columns: 34;
+  }
+
+  &--sm {
+    --columns: 22;
+  }
+
+  &--inner {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &--legacy {
+    @include flex-column;
+  }
+
+  &--bleed {
+    padding: 0;
+  }
+
+  &--fan {
+    &--top {
+      margin-top: var(--fan-height) !important;
+    }
+
+    &--bottom {
+      margin-bottom: var(--fan-height) !important;
+    }
+
+    > .fan {
+      position: absolute;
+      left: 0;
+      top: calc(var(--fan-height) * -1 + 1px);
+
+      &--flip {
+        top: calc(100% - 1px) !important;
+      }
+    }
+  }
+
+  @media (max-width: 1000px) {
+    --columns: initial;
+  }
+
+  @include media('<sm') {
+    padding: 0 var(--unit-half);
+    margin: var(--unit) 0;
+
+    > .row--inner {
+      padding: 0; // single padding
+    }
+  }
+
+  > .row {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}

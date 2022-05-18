@@ -1,0 +1,22 @@
+.grid {
+  display: grid;
+  gap: var(--unit);
+
+  &--sm {
+    gap: var(--unit-half);
+  }
+
+  @include media('>=sm') {
+    &--2 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    &--3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    &--2-offset {
+      grid-template-columns: 1.5fr 1fr;
+    }
+  }
+}

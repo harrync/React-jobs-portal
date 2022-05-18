@@ -1,0 +1,116 @@
+.embed {
+  iframe {
+    width: 100%;
+  }
+
+  form {
+    @include flex-column;
+    align-items: flex-start;
+    font-size: var(--f-size-small);
+
+    .form-row {
+      display: flex;
+      flex-wrap: wrap;
+      margin-right: -15px;
+      margin-left: -15px;
+      width: 100%;
+    }
+
+    .form-col {
+      position: relative;
+      width: 100%;
+      min-height: 1px;
+      padding-right: 15px;
+      padding-left: 15px;
+
+      input:not([type='checkbox']):not([type='radio']):not([type='submit']),
+      textarea,
+      select {
+        width: 100%;
+        max-width: 100%;
+        display: block;
+        margin-top: 0.3em;
+        margin-bottom: 1.2rem;
+      }
+
+      @include media('>sm') {
+        flex: 0 0 50%;
+        max-width: 50%;
+      }
+    }
+  }
+
+  input:not([type='checkbox']):not([type='radio']):not([type='submit']),
+  textarea,
+  select {
+    border: 1px solid #949494;
+    padding: var(--unit-half);
+    border-radius: 4px;
+    font-size: var(--f-size);
+    margin: var(--unit-third) 0;
+    width: 100%;
+    max-width: calc(var(--unit) * 12);
+    background-color: var(--c-white);
+
+    &:focus {
+      border-color: var(--c-maroon);
+      outline: var(--c-maroon);
+    }
+  }
+
+  input[type='checkbox'],
+  input[type='radio'] {
+    margin-right: var(--unit-half);
+  }
+
+  label,
+  textarea {
+    max-width: calc(var(--unit) * 20);
+  }
+
+  input[type='submit'] {
+    padding: var(--unit-half) var(--unit);
+    background-color: var(--c-primary);
+    border: 2px solid var(--c-primary);
+    color: var(--c-white);
+    display: inline-block;
+    transition: var(--transition-all);
+    cursor: pointer;
+    font-weight: var(--f-weight-bold);
+    text-align: center;
+    line-height: 1;
+    text-transform: uppercase;
+    margin-top: var(--unit);
+
+    @include media('<sm') {
+      padding: var(--unit-half);
+    }
+
+    &:hover,
+    &:focus {
+      background-color: var(--c-maroon);
+      border-color: var(--c-maroon);
+      text-decoration: none;
+      color: var(--c-white);
+    }
+
+    &:active {
+      background: var(--c-pink);
+      border-color: var(--c-pink);
+    }
+  }
+
+  .asterisk {
+    color: red;
+  }
+}
+
+#mc_embed_signup {
+  ul {
+    list-style: none;
+  }
+
+  .indicates-required {
+    font-size: 80%;
+  }
+}

@@ -1,0 +1,17 @@
+.a-skip-link {
+  background-color: var(--c-maroon);
+  padding: var(--unit-half);
+  color: var(--c-white);
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(-100%);
+  z-index: -1;
+  width: 100%;
+  text-align: center;
+
+  &:focus {
+    transform: translateY(0%);
+    z-index: 100;
+  }
+}

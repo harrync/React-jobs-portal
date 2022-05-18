@@ -1,0 +1,66 @@
+/* Mixins
+/* + + + + + + + + + + + + + + + + + + + + + + + + + + + */
+
+@mixin hover-focus-underline {
+  text-decoration: none;
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  } // hover, focus
+} // @mixin hover_focus_underline
+
+@mixin no-list {
+  // This one is particularly useful in Drupal where list often use list-style-image
+  list-style-image: none;
+  list-style-position: outside;
+  list-style-type: none;
+  list-style: none;
+} // @mixin nolist
+
+@mixin accessible-hide {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+@mixin accessible-unhide {
+  position: relative;
+  left: auto;
+  width: auto;
+  height: auto;
+  overflow: visible;
+}
+
+@mixin ellipsis() {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@mixin fullwidth {
+  left: 50%;
+  margin: 0 -50vw;
+  position: relative;
+  right: 50%;
+  width: 100vw;
+}
+
+@mixin tight {
+  margin: 0;
+  padding: 0;
+}
+
+@mixin bg-img($size) {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: $size;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

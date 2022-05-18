@@ -1,0 +1,81 @@
+.header__search-form {
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+  top: 0;
+  left: var(--logo-size);
+  right: 0;
+  bottom: 0;
+  background-color: var(--c-maroon);
+  transition: all 0.2s ease;
+  transform: scaleX(0);
+  transform-origin: right;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  > form {
+    margin-left: calc(-1 * var(--logo-size));
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: all 0.4s ease;
+    transition-delay: 0.2s;
+    width: calc(var(--unit) * 15);
+    max-width: 100%;
+
+    input[type='search'] {
+      background-color: transparent;
+      color: white;
+      border: none;
+      box-shadow: none;
+      width: 100%;
+      text-align: center;
+      font-size: 20px;
+      padding: var(--unit-half);
+
+      &::placeholder {
+        color: white;
+      }
+
+      &::-webkit-search-cancel-button {
+        -webkit-appearance: none;
+      }
+    }
+  }
+
+  &.is-active {
+    opacity: 1;
+    z-index: 5;
+    visibility: visible;
+    transform: scaleX(1);
+
+    > form {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @include media('<lg') {
+    display: none;
+  }
+}
+
+.mobile-search__form {
+  input[type='search'] {
+    background: transparent;
+    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M23.325 20.175C23.7375 20.5875 24 21.15 24 21.75C24 22.9875 22.9875 24 21.75 24C21.1125 24 20.55 23.7375 20.175 23.325L13.575 16.7625C12.225 17.55 10.65 18 9 18C4.0125 18 0 13.9875 0 9C0 4.0125 4.0125 0 9 0C13.9875 0 18 4.0125 18 9C18 10.65 17.55 12.225 16.7625 13.575L23.325 20.175ZM9 2.25C5.2875 2.25 2.25 5.2875 2.25 9C2.25 12.7125 5.2875 15.75 9 15.75C12.7125 15.75 15.75 12.7125 15.75 9C15.75 5.2875 12.7125 2.25 9 2.25Z' fill='white'/%3E%3C/svg%3E");
+    background-position: 10px center;
+    background-repeat: no-repeat;
+    color: white;
+    border: none;
+    box-shadow: none;
+    margin-left: -10px;
+    padding: 0.5rem 1rem 0.5rem 2.5rem;
+    font-size: 20px;
+    width: 100%;
+
+    &::placeholder {
+      color: white;
+    }
+  }
+}

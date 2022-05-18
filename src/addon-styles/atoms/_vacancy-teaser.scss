@@ -1,0 +1,23 @@
+.a-vacancy-teaser {
+  background-color: var(--c-grey-bg);
+  padding: var(--unit-half);
+
+  span {
+    color: var(--c-text);
+    font-size: var(--f-size-small);
+    line-height: 1;
+    margin-bottom: calc(var(--unit) / 4);
+    display: inline-block;
+  }
+
+  &:hover {
+    text-decoration: none;
+    background-color: var(--c-maroon);
+    color: var(--c-white);
+
+    span,
+    h3 {
+      color: inherit;
+    }
+  }
+}

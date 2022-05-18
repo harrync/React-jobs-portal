@@ -1,0 +1,48 @@
+// Normalize.css makes browsers render all elements more consistently and in
+// line with modern standards. It precisely targets only the styles that need normalizing.
+@import '~normalize.scss/normalize.scss';
+
+// FontAwesome
+
+$fa-font-path: '/addon-styles/fonts';
+
+@import '~@fortawesome/fontawesome-free/scss/fontawesome.scss';
+@import '~@fortawesome/fontawesome-free/scss/brands.scss';
+@import '~@fortawesome/fontawesome-free/scss/solid.scss';
+
+// Media qs
+@import '~include-media/dist/_include-media';
+
+// Fonts, mixins, variables, etc
+@import 'addon-styles/config/fonts';
+@import 'addon-styles/config/mixins';
+@import 'addon-styles/base/variables';
+@import 'addon-styles/base/layout';
+@import 'addon-styles/base/base';
+
+// Global
+@import 'addon-styles/global/grid.scss';
+@import 'addon-styles/global/row.scss';
+
+// Storybook components
+// @import 'addon-styles/components/**/*.scss';
+
+// Atoms
+@import 'addon-styles/atoms/embed';
+@import 'addon-styles/atoms/button';
+@import 'addon-styles/atoms/loader.scss';
+@import 'addon-styles/atoms/vacancy-teaser.scss';
+
+// Molecules
+@import 'addon-styles/molecules/vacancy.scss';
+@import 'addon-styles/molecules/vacancy-application.scss';
+
+// Organisms
+@import 'addon-styles/organisms/careers.scss';
+@import 'addon-styles/organisms/vacancies.scss';
+
+.apply-column {
+  justify-content: center;
+  display: flex;
+  margin: 0 0 var(--unit);
+}

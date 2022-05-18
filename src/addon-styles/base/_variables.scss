@@ -1,0 +1,90 @@
+/* Variables
+/* + + + + + + + + + + + + + + + + + + + + + + + + + + + */
+
+/**
+* Breakpoints for @include-media
+*/
+$breakpoints: (
+  xxs: 360px,
+  xs: 576px,
+  sm: 768px,
+  md: 1024px,
+  lg: 1200px,
+  xlg: 1600px,
+);
+
+:root {
+  /**
+  * Fonts
+  */
+  --f-defaults: 'Helvetica Neue', Arial, sans-serif;
+  --f-base: 'Roboto', var(--f-defaults);
+  --f-size: 18px;
+  --f-size-small: 16px;
+  --f-size-large: 24px;
+  --f-weight-regular: 400;
+  --f-weight-medium: 500;
+  --f-weight-bold: 700;
+
+  /**
+  * Colours
+  */
+
+  // NOTE - if these colours change, update in `/components/00-blocks/carousel/carousel.twig`
+  // Neutral
+  --c-white: #fff;
+  --c-black: #000000;
+  --c-grey: #697378;
+  --c-grey-bg: #f3f3f3;
+  --c-grey-dark: #3c4b55;
+  --c-grey-light: #f9f9f9;
+  --c-text: #3f4a55;
+
+  // Primary
+  --c-primary: #e0004d;
+  --c-red: var(--c-primary);
+  --c-pink: #ef4a81;
+  --c-maroon: #8a1538;
+
+  /**
+  * Layout
+  */
+  // max bound column size
+  --grid-rows: 44;
+
+  // Section margins
+  --row-margin: calc(var(--unit) * 1.5);
+
+  // Overall grid unit
+  --unit: 33px;
+  --unit-half: calc(var(--unit) / 2);
+  --unit-third: calc(var(--unit) / 3);
+  --unit-two-thirds: calc(var(--unit) * 2 / 3);
+
+  // Half the size of the 'dot'
+  --offset: 2px;
+
+  /**
+  * Misc
+  */
+  --transition-all: 0.1s ease-out;
+
+  // Logo size
+  --logo-size: 160px;
+
+  // Fan height
+  --fan-height: 15vh;
+
+  @include media('<lg') {
+    --logo-size: 120px;
+  }
+
+  @include media('<sm') {
+    --logo-size: 80px;
+    --fan-height: 10vh;
+  }
+
+  @include media('<xxs') {
+    --logo-size: 60px;
+  }
+}

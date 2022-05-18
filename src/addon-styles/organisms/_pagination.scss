@@ -1,0 +1,98 @@
+.pagination-block {
+  margin-top: calc(var(--unit) * 2);
+
+  > p {
+    text-align: center;
+    font-weight: 500;
+    color: black;
+  }
+}
+
+.pagination {
+  $block: &;
+
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+
+  li {
+    display: inline-block;
+    font-size: 24px;
+    font-weight: 500;
+    color: var(--c-grey);
+    margin: 0 var(--unit-third);
+
+    &.current {
+      color: var(--c-maroon);
+      text-decoration: underline;
+    }
+
+    a {
+      color: var(--c-grey);
+    }
+
+    &#{$block}__next,
+    &#{$block}__prev {
+      margin-left: calc(var(--unit) * 3);
+
+      > button,
+      a {
+        height: 20px;
+        border: none;
+        background-color: transparent;
+        width: 30px;
+        background-image: url("data:image/svg+xml,%3Csvg width='44' height='30' viewBox='0 0 44 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M28.9812 0L25.9499 2.98165L35.8706 12.8899L0 12.8899L0 17.1101H35.8706L25.9499 27.0183L28.9812 30L44 15L28.9812 0Z' fill='%237E2238'/%3E%3C/svg%3E%0A");
+        background-repeat: no-repeat;
+        background-size: 30px 20px;
+        display: block;
+
+        &:hover {
+          opacity: 0.7;
+        }
+
+        &:disabled {
+          opacity: 0.2;
+        }
+      }
+    }
+
+    &#{$block}__prev {
+      transform: scaleX(-1);
+      margin-left: 0;
+      margin-right: calc(var(--unit) * 3);
+    }
+
+    @include media('<sm') {
+      &#{$block}__next {
+        margin-left: calc(var(--unit) * 2);
+      }
+
+      &#{$block}__prev {
+        margin-right: calc(var(--unit) * 2);
+      }
+    }
+
+    @include media('<xs') {
+      &#{$block}__next {
+        margin-left: var(--unit);
+      }
+
+      &#{$block}__prev {
+        margin-right: var(--unit);
+      }
+    }
+
+    @include media('<xxs') {
+      &#{$block}__next {
+        margin-left: var(--unit-third);
+      }
+
+      &#{$block}__prev {
+        margin-right: var(--unit-third);
+      }
+    }
+  }
+}

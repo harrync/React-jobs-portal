@@ -1,0 +1,40 @@
+.m-vacancy {
+  margin-top: var(--unit);
+
+  &__details {
+    @include no-list;
+    padding: 0;
+    margin: 0 0 var(--unit-half);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    @include media('<xs') {
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%;
+    }
+
+    li {
+      margin: var(--unit-half);
+      display: flex;
+      align-items: center;
+
+      @include media('<xs') {
+        margin: var(--unit-third) 0;
+      }
+    }
+
+    i {
+      margin-right: 10px;
+      font-size: var(--f-size-large);
+    }
+  }
+
+  @include media('<xs') {
+    .row.two-columns {
+      padding: 0;
+    }
+  }
+}

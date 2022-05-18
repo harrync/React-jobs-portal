@@ -1,0 +1,140 @@
+@include media('<lg') {
+  .header {
+    .header__main {
+      position: relative;
+
+      .header__nav {
+        position: absolute;
+        top: 100%;
+        left: calc(-1 * var(--logo-size));
+        right: calc(-1 * var(--logo-size));
+        background-color: var(--c-maroon);
+        padding: calc(var(--unit) * 2);
+
+        .header__nav-end {
+          display: block;
+        }
+
+        &.is-open {
+          display: block;
+        }
+
+        > li {
+          + li {
+            margin-left: 0;
+            margin-top: calc(var(--unit) * 1.5);
+          }
+
+          > a {
+            display: flex;
+            justify-content: space-between;
+            font-size: 20px;
+
+            &:focus,
+            &:active,
+            &:hover {
+              color: white;
+            }
+
+            .dropdown-toggle {
+              display: block;
+              width: 28px;
+              height: 28px;
+              position: relative;
+
+              &::after {
+                content: '';
+                position: absolute;
+                top: calc(50% - 5px);
+                left: calc(50% - 3px);
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 5px 0 5px 6px;
+                border-color: transparent transparent transparent #ffffff;
+              }
+            }
+          }
+        }
+
+        li {
+          a:not(.btn) {
+            color: white;
+            padding: 0;
+          }
+        }
+      }
+    }
+  }
+
+  .mega-menu {
+    overflow: hidden;
+    top: 0;
+    flex-direction: column;
+    background-color: var(--c-maroon);
+    z-index: 15;
+    left: 0;
+    width: 100%;
+    min-height: 100%;
+
+    > li {
+      &:first-child {
+        padding: calc(var(--unit) * 2) calc(var(--unit) * 2) var(--unit);
+      }
+    }
+
+    &__back {
+      display: inline-flex;
+      align-items: center;
+      font-size: 20px;
+      position: relative;
+      margin-bottom: var(--unit);
+
+      &::before {
+        content: '';
+        display: block;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 5px 6px 5px 0;
+        border-color: transparent var(--c-white) transparent transparent;
+        margin-right: 1rem;
+      }
+    }
+
+    &__parent-link {
+      font-size: 28px;
+      justify-content: flex-start;
+    }
+
+    &.is-open {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    &__list {
+      column-count: 1 !important;
+    }
+
+    &.mega-menu--cta {
+      .mega-menu__cta {
+        > div {
+          padding-left: calc(var(--unit) * 2);
+          padding-right: calc(var(--unit) * 2);
+
+          p {
+            max-width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include media('<xxs') {
+  .header .header__main .header__nav,
+  .mega-menu > li:first-child,
+  .mega-menu.mega-menu--cta .mega-menu__cta > div {
+    padding: var(--unit);
+  }
+}

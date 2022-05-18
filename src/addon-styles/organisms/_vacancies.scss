@@ -1,0 +1,13 @@
+.o-vacancies {
+  h2 {
+    background-color: #fff;
+    top: -1px;
+    position: sticky;
+    padding: var(--unit-half) 0;
+    margin: 0;
+  }
+
+  &__list {
+    margin-top: var(--unit-half);
+  }
+}

@@ -1,0 +1,21 @@
+.a-section-header {
+  display: grid;
+  align-items: center;
+  margin-bottom: var(--unit);
+  gap: var(--unit-third);
+
+  @include media('>xs') {
+    gap: 0;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  h2 {
+    margin-bottom: 0;
+  }
+
+  @include media('>xs') {
+    a {
+      justify-self: end;
+    }
+  }
+}
