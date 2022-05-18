@@ -1,6 +1,6 @@
 # Example React & Typescript Jobs Board
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/2b082f54-be29-47ce-9644-2e08437fed1f/deploy-status)](https://app.netlify.com/sites/leaflet-mapping/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/dffe2522-de6a-493f-812f-978f51d806a2/deploy-status)](https://app.netlify.com/sites/vacancies-board/deploys)
 
 An example jobs board app.
 
@@ -14,4 +14,4 @@ Technology used:
 
 Styling brought forward from previous project.
 
-Preview @ [https://jobs-board.netlify.app/](https://jobs-board.netlify.app/)
+Preview @ [https://vacancies-board.netlify.app/](https://vacancies-board.netlify.app/)
